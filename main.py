@@ -3,11 +3,17 @@ from utils import *
 from pytorch_lightning import seed_everything
 from pytorch_lightning.utilities import rank_zero_only
 import argparse
+import os
 
 
 @rank_zero_only
 def print_cfg(cfg):
     print(cfg)
+
+
+@rank_zero_only
+def make_dir(cfg):
+    os.makedirs(cfg.EXPERIMENT.SAVER.DIRPATH, exist_ok=True)
 
 
 def main(cfg):
@@ -29,5 +35,6 @@ if __name__ == "__main__":
     args = parser.parse_args()
     cfg = get_cfg(args.config)
     seed_everything(cfg.SEED)
+    make_dir(cfg)
     print_cfg(cfg)
     main(cfg)

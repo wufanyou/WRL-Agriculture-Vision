@@ -1,0 +1,31 @@
+# path to dataset, need modification if necessary
+DATASET:
+  PATH: ./supervised/Agriculture-Vision-2021/
+
+# path to save the model, need modification if necessary
+EXPERIMENT:
+  SAVER:
+    DIRPATH: ./models/
+
+# The trainer setting, our cluster have 4 2080Ti GPU
+# This model require 8 GPUs in total, so set GPUS=4 and num_nodes=2
+# If 4 GPUs is to use reproductions , delete num_nodes lines and modify max step
+TRAINER:
+  MAX_STEPS: 150000
+  GPUS: 4
+  ACCELERATOR: ddp
+  SYNC_BATCHNORM: true
+  NUM_NODES: 2
+
+DATALOADER:
+  BATCH_SIZE:
+    TRAIN: 2
+    TEST: 2
+    VAL: 2
+  INCLUDE_VALID: true
+
+MODEL:
+  ENCODER: efficientnet-b5
+  VERSION: FPN
+
+SEED: 2021

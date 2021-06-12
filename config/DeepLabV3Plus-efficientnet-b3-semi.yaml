@@ -1,0 +1,36 @@
+# path to dataset, need modification if necessary
+DATASET:
+  PATH: ./supervised/Agriculture-Vision-2021/
+
+# path to save the model, need modification if necessary
+EXPERIMENT:
+  SAVER:
+    DIRPATH: ./models/
+
+# MODEL.PRETRAINED is the model from we trained from the supervised track, need modification if necessary
+MODEL:
+  PRETRAINED: ./models/DeepLabV3Plus-efficientnet-b3-epoch=30-val_iou=0.7109.ckpt
+  ENCODER: efficientnet-b3
+  VERSION: DeepLabV3Plus
+
+# The trainer setting, our cluster have 4 2080Ti GPU
+# This model require 4 GPUs in total, so set GPUS=4
+TRAINER:
+  MAX_EPOCHS: 1
+  GPUS: 4
+  ACCELERATOR: ddp
+  SYNC_BATCHNORM: true
+
+OPTIMIZER:
+  ARGS:
+    LR: 0.00001
+
+DATALOADER:
+  BATCH_SIZE:
+    TRAIN: 4
+    TEST: 4
+    VAL: 4
+  INCLUDE_VALID: true
+  INCLUDE_SEMI: true # include semi in training
+
+SEED: 1273

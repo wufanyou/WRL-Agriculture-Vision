@@ -9,6 +9,7 @@ from pytorch_lightning.utilities import rank_zero_only
 __ALL__ = ["get_trainer"]
 KEY = "TRAINER"
 
+
 def get_trainer(cfg: OmegaConf) -> Trainer:
     logger = get_logger(cfg)
     checkpoint_callback = get_saver(cfg)

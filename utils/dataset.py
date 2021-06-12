@@ -139,7 +139,6 @@ class DatasetV3(BaseDataset):
         return output
 
 
-
 class DatasetV8(DatasetV3):
     def __getitem__(self, item: int) -> Dict[str, Tensor]:
         file_name = self.filenames[item]
@@ -172,6 +171,3 @@ class DatasetV8(DatasetV3):
             labels = torch.cat([background, labels])
             output["gt_semantic_seg"] = labels
         return output
-
-
-

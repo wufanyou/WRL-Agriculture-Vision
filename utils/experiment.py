@@ -28,7 +28,7 @@ def get_logger(cfg: OmegaConf) -> LightningLoggerBase:
             config=yaml.load(OmegaConf.to_yaml(cfg), Loader=yaml.FullLoader),
         )
     else:
-        logger = None
+        assert False, 'only support MLFlow or Wandb'
     return logger
 
 

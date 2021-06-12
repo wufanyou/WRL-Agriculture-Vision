@@ -5,11 +5,6 @@
 Here are description of fields that might need modification in the config file. 
 Check comments in the config files for more details. 
 
-* `DATASET.PATH`: The path of the dataset.
-* `EXPERIMENT.SAVER.DIRPATH` The path of model .
-* `TRAINER.GPUS`
-* `TRAINER.num_nodes`
-* `DATALOADER.BATCH_SIZE`:
 
 | Key      | Description |
 | ----------- | ----------- |

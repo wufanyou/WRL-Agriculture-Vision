@@ -1,9 +1,6 @@
 # Created by fw at 12/30/20
 import torchvision
-import torch
 from omegaconf import OmegaConf
-from torch import Tensor
-import torchvision.transforms.functional as F
 import imgaug.augmenters as iaa
 
 __ALL__ = ["get_transform", "get_tta_transform"]

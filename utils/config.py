@@ -82,6 +82,7 @@ _C.LOSS.VERSION = "HybirdV4"
 _C.LOSS.ARGS = OmegaConf.create()
 _C.LOSS.ARGS.WEIGHT = None
 _C.LOSS.ARGS.L1 = 1.0
+_C.LOSS.ARGS.SMOOTH = 100.0
 
 # optimizer
 _C.OPTIMIZER = OmegaConf.create()

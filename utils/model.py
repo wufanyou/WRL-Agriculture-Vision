@@ -3,12 +3,8 @@ from omegaconf import OmegaConf
 import torch.nn as nn
 import torch
 from .models import *
-
-# from mmcv.utils import Config
-# from mmseg.models import build_segmentor
 import segmentation_models_pytorch as smp
 
-from pytorch_lightning.utilities import rank_zero_only
 
 __ALL__ = ["get_model"]
 KEY = "MODEL"

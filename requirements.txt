@@ -9,4 +9,4 @@ libtiff
 pillow
 tqdm
 mlflow
-git+git://github.com/PyTorchLightning/metrics.git
+git+https://github.com/PyTorchLightning/metrics.git

@@ -6,9 +6,6 @@ from omegaconf import OmegaConf
 from torch.optim import Optimizer
 from torch.optim.lr_scheduler import LambdaLR
 
-# from mmcv.runner import DefaultOptimizerConstructor
-# from apex.optimizers import FusedLAMB
-
 from typing import Tuple, Optional
 
 __ALL__ = ["get_optimizer"]
@@ -20,13 +17,6 @@ def get_optimizer(
 ) -> Tuple[Optimizer, Optional[LambdaLR]]:
     args = dict(cfg[KEY].ARGS)
     args = {str(k).lower(): v for k, v in args.items()}
-    # args["type"] = cfg[KEY].VERSION
-    # paramwise_args = None
-    # if "PARAMWISE_ARGS" in cfg[KEY]:
-    # paramwise_args = dict(cfg[KEY].PARAMWISE_ARGS)
-    # paramwise_args = {str(k).lower(): dict(v) for k, v in paramwise_args.items()}
-    # optimizer_buider = DefaultOptimizerConstructor(args, paramwise_args)
-
     optimizer = eval(f"optim.{cfg[KEY].VERSION}")
     optimizer = optimizer(model.parameters(), **args)
 

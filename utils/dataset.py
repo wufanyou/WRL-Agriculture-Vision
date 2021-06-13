@@ -1,13 +1,9 @@
-import json
-
 import torch
 import glob
 import numpy as np
 import torchvision.transforms.functional as F
 from torchvision.transforms import Normalize
 from utils.transform import get_transform
-import scipy.io as io
-import pandas as pd
 
 # type
 from PIL import Image

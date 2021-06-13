@@ -7,9 +7,9 @@ EXPERIMENT:
   SAVER:
     DIRPATH: ./models/
 
-# The trainer setting, our cluster have 4 2080Ti GPU
-# This model require 8 GPUs in total, so set GPUS=4 and num_nodes=2
-# If 4 GPUs is to use reproductions , delete num_nodes lines and modify max step
+# The trainer setting, each node in our cluster has 4 2080Ti GPU.
+# This model requires 8 GPUs in total, so set GPUS=4 and NUM_NODES=2.
+# If 4 GPUs is used for reproduction, delete NUM_NODES lines and modify MAX_STEPS.
 TRAINER:
   MAX_STEPS: 150000
   GPUS: 4

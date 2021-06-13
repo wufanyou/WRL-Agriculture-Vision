@@ -13,8 +13,8 @@ MODEL:
   ENCODER: efficientnet-b3
   VERSION: DeepLabV3Plus
 
-# The trainer setting, our cluster have 4 2080Ti GPU
-# This model require 4 GPUs in total, so set GPUS=4
+# The trainer setting, each node in our cluster has 4 2080Ti GPU.
+# This model requires 4 GPUs in total, so set GPUS=4
 TRAINER:
   MAX_EPOCHS: 1
   GPUS: 4

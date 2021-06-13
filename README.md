@@ -1,5 +1,6 @@
 # WRL-Agriculture-Vision
-This repository is the Team WRL's solution to the Agriculture-Vision Prize Challenge.***
+This repository is the Team WRL's solution to the Agriculture-Vision Prize Challenge.
+***
 
 ## Generate result with trained models
 

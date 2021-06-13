@@ -1,10 +1,23 @@
 # WRL-Agriculture-Vision
-This is repository is the Team WRL's solution to the 2nd Agriculture-Vision Prize Challenge.
-***
+This repository is the Team WRL's solution to the Agriculture-Vision Prize Challenge.***
 
-## Get Started
+## Generate result with trained models
+
+1.1 Download all checkpoints in models/README.md and put all checkpoints in the model folder
+
+1.2 Modify path in all configs. Check config/README.md for details. 
+The default path for dataset is `./supervised/Agriculture-Vision-2021/` 
+and `./raw/` (for semi-supervised learning only).
+
+1.3 Run `python test.py` and `python test-semi.py`. We can also specify the input
+and output dir as well as the number of GPUs that are used.
+Check Reproduction of training models sections for more details.
+
+1.4 By default, a directory called `sumbission` will store the submission for supervised track
+and a directory called `semi-submission will store the submission for the semi-supervised track.
 
 
+## Reproduction of solution
 ### 1. For supervised learning track
 
 1.1 Modify path in all configs. Check config/README.md for details.
@@ -14,7 +27,7 @@ This is repository is the Team WRL's solution to the 2nd Agriculture-Vision Priz
     python main.py -c config/DeepLabV3Plus-efficientnet-b3.yaml
     python main.py -c config/FPN-efficientnet-b4.yaml 
     
-1.3 Train those two models which are required 8 X 2080 Ti GPUs of two nodes, 
+1.3 Train those two models, which are required 8 X 2080 Ti GPUs of two nodes, 
     check [here](https://pytorch-lightning.readthedocs.io/en/latest/clouds/cluster.html)
     to set how to train models on more than one node:
 

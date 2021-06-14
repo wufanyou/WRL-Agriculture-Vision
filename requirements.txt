@@ -2,11 +2,11 @@ pytorch_lightning==1.3.3
 torch>=1.6.0
 segmentation_models_pytorch
 imgaug
-omegaconf
+omegaconf==2.0.5
 pandas
 scipy
 libtiff
-pillow
+Pillow
 tqdm
 mlflow
 git+https://github.com/PyTorchLightning/metrics.git

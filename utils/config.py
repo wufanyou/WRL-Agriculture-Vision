@@ -1,6 +1,6 @@
 # Created by fw at 12/30/20
 from omegaconf import OmegaConf
-
+from typing import Optional
 __ALL__ = ["get_cfg"]
 KEY = "CONFIG"
 
@@ -10,7 +10,7 @@ def get_filename(path: str) -> str:
     return filename
 
 
-def get_cfg(path: str = None) -> OmegaConf:
+def get_cfg(path: Optional[str] = None) -> OmegaConf:
     if path is not None:
         cfg = OmegaConf.load(path)
         cfg = OmegaConf.merge(_C, cfg)

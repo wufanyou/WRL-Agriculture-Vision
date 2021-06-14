@@ -6,7 +6,7 @@ omegaconf==2.0.5
 pandas
 scipy
 libtiff
-pillow
+Pillow
 tqdm
 mlflow
 git+https://github.com/PyTorchLightning/metrics.git

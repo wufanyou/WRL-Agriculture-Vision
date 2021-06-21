@@ -17,7 +17,7 @@ parser.add_argument(
     "-f", "--fold", default=0, type=int,
 )
 parser.add_argument(
-    "-t", "--total_fold", default=1, type=int,
+    "-t", "--total-fold", default=1, type=int,
 )
 parser.add_argument(
     "-d", "--device", default='0', type=str,

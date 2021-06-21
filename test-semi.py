@@ -22,7 +22,7 @@ parser.add_argument(
 )
 parser.add_argument(
     "-t",
-    "--total_fold",
+    "--total-fold",
     default=1,
     type=int,
 )

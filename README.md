@@ -1,5 +1,5 @@
 # WRL-Agriculture-Vision
-This repository is the Team WRL's solution to the Agriculture-Vision Prize Challenge.
+This repository is the Team WRL's solution to the (Agriculture-Vision Prize Challenge)[https://www.agriculture-vision.com/agriculture-vision-2021/prize-challenge-2021].
 ***
 
 

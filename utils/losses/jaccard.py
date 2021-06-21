@@ -13,20 +13,20 @@ __all__ = ["CustomiseJaccardLoss"]
 
 
 def soft_jaccard_score(
-    output: Tensor,
+    pred: Tensor,
     target: Tensor,
     mask: Tensor,
-    smooth: float = 0.0,
+    smooth: float = 100.0,
     eps: float = 1e-7,
     dims=None,
 ) -> Tensor:
-    assert output.size() == target.size()
+    assert pred.size() == target.size()
     if dims is not None:
-        intersection = torch.sum(output * target * mask, dim=dims)
-        cardinality = torch.sum((output + target) * mask, dim=dims)
+        intersection = torch.sum(pred * target * mask, dim=dims)
+        cardinality = torch.sum((pred + target) * mask, dim=dims)
     else:
-        intersection = torch.sum(output * target * mask)
-        cardinality = torch.sum((output + target) * mask)
+        intersection = torch.sum(pred * target * mask)
+        cardinality = torch.sum((pred + target) * mask)
 
     union = cardinality - intersection
     jaccard_score = (intersection + smooth) / (union + smooth).clamp_min(eps)
